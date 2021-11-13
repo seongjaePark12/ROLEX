@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<%@ include file="include/bs4.jsp" %>
-	<title>title</title>
-	<%@ include file="WEB-INF/js/mainJs.jsp" %>
-	<%@ include file="WEB-INF/css/mainCss.jsp" %>
+	<title>Rolex</title>
+	<%@ include file="js/mainJs.jsp" %>
+	<%@ include file="css/mainCss.jsp" %>
 </head>
 <body>
 	<%@ include file="include/menuHeader.jsp" %>
@@ -20,7 +20,7 @@
 			</div>
 			<br/><br/><br/><br/>
 			<div align=center>
-				<video width="90%"src="images/메인영상1.mp4" autoplay loop control circle style="display: block;" muted></video>
+				<video width="90%"src="<%=request.getContextPath()%>/images/메인영상1.mp4" autoplay loop control circle style="display: block;" muted></video>
 			</div>
 			<br/><br/><br/><br/>
 			<div class="font1">오랜 시간 동안 롤렉스 시계는 가장 높은 산의 정상부터 가장 깊은 바닷속까지 탐험하는 전 세계의 탐험가들 및 도전하며 성취하는 전문가들과 함께했습니다.</div><br/><br/>
@@ -30,7 +30,7 @@
 			</div>
 			<br/><br/><br/><br/>
 			<div align=center>
-				<video width="90%"src="images/메인영상2.mp4" autoplay loop control circle style="display: block;" muted></video>
+				<video width="90%"src="<%=request.getContextPath()%>/images/메인영상2.mp4" autoplay loop control circle style="display: block;" muted></video>
 			</div>
 			<br/><br/><br/><br/>
 			<div class="font1">롤렉스 후원 활동의 역사는 탁월함을 향한 끝없는 열정을 보여줍니다. 이러한 브랜드 정신은 워치메이킹부터 스포츠, 탐험, 예술 분야의 가장 위대한 인물들까지 모든 롤렉스 활동의 기반이 됩니다.</div><br/><br/>

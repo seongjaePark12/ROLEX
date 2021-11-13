@@ -61,7 +61,6 @@
 		<!-- 검색창 띄우기 -->
 <div class="w3-content" style="max-width:100%;">
 	<div class="mySlides w3-display-container w3-center">
-		<video class="menu3" width="100%"src="<%=request.getContextPath() %>/images/1.mp4" autoplay loop control circle style="display: block;" muted></video>
+		<img width= 100% src="<%=request.getContextPath() %>/images/구입1.png">
 	</div>
 </div>
-<br/><br/><br/><br/>

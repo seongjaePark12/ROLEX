@@ -4,10 +4,10 @@
 		<div id="footerWidth">
 				<div id="footer">
 					(주)롤렉스<br>
-					대표 : 박성재 / 청주시 상당구 어딘가(본사) / 사업자 등록번호 : XXX-XX-XXXXX <br>
-					전화 : 010-7742-1775 / 팩스 : XX-XXXX-XXXX / 운영자 : 최고관리자 <a href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp" target="_blank"><font color="gray">[사업자정보확인]</font></a><br>
-					개인정보관리책임자 : 박성재 / 통신판매업신고번호 : 제 XXXX-청주상당구-XXXX호 <br>
-					클라이언트서비스센터 010-7742-1775 / 메일 문의 qkrtjdwo337@naver.com <br>
+					대표 : 박성재 / 서울시 영등포구 어딘가 / 사업자 등록번호 : XXX-XX-XXXXX <br>
+					전화 : 010-7742-**75 / 팩스 : XX-XXXX-XXXX / 운영자 : 최고관리자 <a href="http://www.ftc.go.kr/info/bizinfo/communicationList.jsp" target="_blank"><font color="gray">[사업자정보확인]</font></a><br>
+					개인정보관리책임자 : 박성재 / 통신판매업신고번호 : 제 XXXX-서울-XXXX호 <br>
+					클라이언트서비스센터 010-7742-**75 / 메일 문의 qkrtjdwo337@naver.com <br>
 					<br>
 					<p>COPYRIGHT ⓒ (주)롤렉스 All Rights Reserved.</p>
 				</div>
