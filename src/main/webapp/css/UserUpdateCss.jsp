@@ -18,56 +18,69 @@ body{
   box-shadow: 12px 12px 22px gray;
 }
 #mid {
-  width: 435px;
+  width: 100%;
   height: 43px;
   margin-top: 11px;
   border: 1px solid #DADADA;
   outline: none;
 }
 #pwd {
-  width: 435px;
+  width: 100%;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
 #pwdTest {
-  width: 435px;
+  width: 100%;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
 #name {
-  width: 435px;
+  width: 100%;
+  height: 43px;
+  margin-top: 10px;
+  border: 1px solid #DADADA;
+  outline: none;
+}
+#birth{
+  width: 100%;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
 #email {
-  width: 255px;
+  width: 300px;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
+#email2 {
+	margin-top: 10px;
+  height: 43px;
+  border: 1px solid #DADADA;
+  outline: none;
+}
 #getCode {
-  width: 138px;
+  width: 130px;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
 #getCode2 {
-  width: 138px;
+  width: 130px;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
 #getCode3 {
-  width: 138px;
+  width: 130px;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
@@ -96,7 +109,7 @@ input[type=button]:hover{
   outline: none;
 }
 
-input[type=submit] {
+#joinbtn {
   width: 435px;
   height: 43px;
   background-color: black;
@@ -106,7 +119,7 @@ input[type=submit] {
   color: white;
   font-size: 20px;
 }
-input[type=submit]:hover{
+#joinbtn:hover{
   background: white;
   border: 1px solid;
   color: black;
@@ -125,29 +138,29 @@ input[type=button] {
   text-decoration: inherit;
   color: black;
 }
-#sample4_postcode {
-  width: 200px;
+#sample6_postcode {
+  width: 50%;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
-#sample4_roadAddress {
-  width: 270px;
+#sample6_address {
+  width: 68.5%;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
-#sample4_extraAddress {
-  width: 150px;
+#sample6_extraAddress {
+  width: 30%;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
   outline: none;
 }
-#sample4_detailAddress {
-  width: 433px;
+#sample6_detailAddress {
+  width: 100%;
   height: 43px;
   margin-top: 10px;
   border: 1px solid #DADADA;
@@ -156,32 +169,32 @@ input[type=button] {
 
 label{
   position: relative;
-  right: 193px;
+  right: 205px;
   font-weight: bold;
 }
 label[for="pwd"]{
   position : relative;
-  right : 185px;
+  right : 200px;
 }
 label[for="pwdTest"]{
   position : relative;
-  right : 170px;
+  right : 180px;
 }
 label[for="name"]{
   position : relative;
-  right : 200px;
+  right : 215px;
 }
 label[for="birth"]{
   position : relative;
-  right : 185px;
+  right : 205px;
 }
 label[for="gender"]{
   position : relative;
-  right : 205px;
+  right : 215px;
 }
 label[for="email"]{
   position : relative;
-  right : 195px;
+  right : 205px;
 }
 label[for="emailCheck"]{
   position : relative;
@@ -189,14 +202,14 @@ label[for="emailCheck"]{
 }
 label[for="phone"]{
   position : relative;
-  right : 185px;
+  right : 195px;
 }
-label[for="find_postcode"]{
+label[for="address"]{
   position : relative;
-  right : 200px;
+  right : 215px;
 }
 label[for="infoopen"]{
   position : relative;
-  right : 180px;
+  right : 190px;
 }
 </style>
