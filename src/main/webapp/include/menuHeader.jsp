@@ -16,15 +16,18 @@
 		</div>
 		<!-- 상단오른쪽 -->
 		<div id="Topright" style="flex: 1 1 0%; text-align: right; margin: auto 0px;">
-<%		if(level != 99){ %>
-			<a href="${ctp}/userMyPage.psj">마이페이지</a>&nbsp;&nbsp;
-<%				if(level == 0){ %> 
-			<a href="${ctp}/adminPage.psj">관리자페이지</a>&nbsp;&nbsp;
-<%				} %>
-			<a href="${ctp}/userLogOut.psj">로그아웃</a>&nbsp;&nbsp;
-<% 			}else{%>
+<%    if(level != 99) {%>
+	<%		if(level == 0){ %> 
+				<a href="${ctp}/adminPage.boss">관리자페이지</a>&nbsp;&nbsp;
+				<a href="${ctp}/userLogOut.psj">로그아웃</a>&nbsp;&nbsp;
+	<%		} %>
+	<%		if(level == 1 ||level == 2 ||level == 3 ||level == 4 ||level == 5){ %>
+				<a href="${ctp}/userMyPage.psj">마이페이지</a>&nbsp;&nbsp;
+				<a href="${ctp}/userLogOut.psj">로그아웃</a>&nbsp;&nbsp;
+	<% 		}%>
+<% 		}else{%>
 			<a href="${ctp}/userLogin.psj" class="w3-padding-small" id="login"><i class="fa fa-user"></i></a>&nbsp;&nbsp;&nbsp;
-<%			} %>
+<%		} %>
 			<a href="#" class="w3-padding-small"><i class="fa fa-shopping-bag" id="fashopping"> </i></a>
 			<button id="btnSearch" class="w3-padding-small btnSearch"><i id="SearchIcon" class="fa fa-search"></i></button>&nbsp;&nbsp;&nbsp;
 		</div>
@@ -40,9 +43,9 @@
 			<a href="collection.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스 컬렉션</a>
 			<a href="new.html" class="w3-padding-small w3-bar-item w3-button w3-mobile ">2021 신제품</a>
 			<a href="man.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">시계구매하기</a>
-			<a href="service.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스서비스</a>
+			<a href="${ctp}/service.ser" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스서비스</a>
 			<a href="care.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스시계관리</a>
-			<a href="공식판매점.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">공식 판매점</a>
+			<a href="${ctp}/serviceMap.ser" class="w3-padding-small w3-bar-item w3-button w3-mobile">공식 판매점</a>
 		</div>
 		<div id="navright" style="flex: 1 1 0%; text-align: right; margin: auto 0px; display: none;">
 <%		if(level != 99){ %>

@@ -49,7 +49,7 @@
 		</div>
 		<div id="navright" style="flex: 1 1 0%; text-align: right; margin: auto 0px; display: none;">
 <%		if(level != 99){ %>
-			<a href="${ctp}/userLogOut.psj">로그아웃</a>&nbsp;&nbsp;
+			<a href="${ctp}/userLogOut.psj" class="w3-padding-small">로그아웃</a>&nbsp;&nbsp;
 <% 			}else{%>
 			<a href="${ctp}/userLogin.psj" class="w3-padding-small" id="login"><i class="fa fa-user"></i></a>&nbsp;&nbsp;&nbsp;
 <%			} %>
@@ -75,31 +75,5 @@
 				<li id="search4"></li>
 			</ul>
 		</div>
-	</div>
-</div>
-		<!-- 검색창 띄우기 -->
-<div id="SearchDiv" class="w3-padding">
-	<div class="w3-padding" style="width: 90%; margin: 0 auto; border-bottom: 1px solid;">
-		<i class="fa fa-search"></i>
-		<input type="text" name="search" id="search" onkeyup="enterKey()" style="border: none;" placeholder="무엇을 찾고 계신가요?" maxlength="10">
-	</div>
-	<p></p>
-	<div style="display: flex; margin: 0 auto; width: 90%;">
-		<div class="w3-padding" style="height: 200px; flex: 1;">
-			<h5 id="searchTitle"></h5>
-			<ul style="list-style: none; margin:0; padding:0;">
-				<li id="search0"></li>
-				<li id="search1"></li>
-				<li id="search2"></li>
-				<li id="search3"></li>
-				<li id="search4"></li>
-			</ul>
-		</div>
-	</div>
-</div>
-		<!-- 검색창 띄우기 -->
-<div class="w3-content" style="max-width:100%;">
-	<div class="mySlides w3-display-container w3-center">
-		<img width= 100% src="${ctp}/images/구입1.png">
 	</div>
 </div>

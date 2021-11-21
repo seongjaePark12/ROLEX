@@ -114,6 +114,7 @@ public class UserDAO {
 	}
 
 
+	// 비밀번호 암호화
 	public long getHashTableSearch(int pwdKey) {
 		long pwdValue = 0;
 		try {
@@ -131,6 +132,7 @@ public class UserDAO {
 		return pwdValue;
 	}
 
+	// 포인트 카운트 증가
 	public void setLastDateUpdate(String mid, int newPoint, int todayCnt) {
 		try {
 			sql = "update RolexUser set lastDate = now(), point = point + ?, visitCnt = visitCnt + 1, todayCnt = ? where mid = ?";
@@ -146,6 +148,7 @@ public class UserDAO {
 		}
 	}
 
+	// 유저 정보
 	public UserVO getUserInfor(String mid) {
 		vo = new UserVO();
 		try {
@@ -167,6 +170,7 @@ public class UserDAO {
 		return vo;
 	}
 
+	// 회원 정보 수정
 	public int setUserUpdateCheck(UserVO vo) {
 		int res = 0;
 		try {
