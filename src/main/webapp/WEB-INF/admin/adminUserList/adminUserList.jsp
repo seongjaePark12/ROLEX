@@ -28,18 +28,18 @@
 					</c:choose>
 					<td colspan="2">
 						<c:if test="${!empty mid}"><c:set var="title" value="${mid}"/></c:if>
-						<div class="font1" style="text-align: center;">${title} 회원 리스트</div>
+						<h2 style="text-align: center;">${title} 회원 리스트</h2>
 					</td>
 				</tr>
 				<tr>
 					<td style="text-align: left">
-						<input class="w3-panel w3-border w3-round-large font5" type="text" name="mid" value="${mid}" placeholder="검색할아이디입력"/>
-						<input class="btn btn-warning btn-sm w3-round-xxlarge font5" type="button" value="개별검색" onclick="midSearch()"/>
-						<input type="button" value="전체보기" onclick="location.href='${ctp}/adminUserList.boss';" class="btn btn-warning btn-sm w3-round-xxlarge font5"/>
+						<input class="w3-panel w3-border w3-round-large font6" type="text" name="mid" value="${mid}" placeholder="검색할아이디입력"/>
+						<input class="btn btn-warning btn-sm w3-round-xxlarge font6" type="button" value="개별검색" onclick="midSearch()"/>
+						<input type="button" value="전체보기" onclick="location.href='${ctp}/adminUserList.boss';" class="btn btn-warning btn-sm w3-round-xxlarge font6"/>
 					</td>
 					<td style="text-align: right">
 						회원등급
-						<select name="level" onchange="levelSearch()" class="w3-panel w3-border w3-round-xxlarge font5">
+						<select name="level" onchange="levelSearch()" class="w3-panel w3-border w3-round-xxlarge font6">
 							<option value="99" <c:if test="${level == 99}">selected</c:if>>전체회원</option>
 							<option value="1" <c:if test="${level == 1}">selected</c:if>>WELCOME</option>
 							<option value="2" <c:if test="${level == 2}">selected</c:if>>BEIGE</option>
@@ -81,7 +81,7 @@
 								<option value="5" <c:if test="${vo.level == 5}">selected</c:if>>BLACK</option>
 								<option value="0" <c:if test="${vo.level == 0}">selected</c:if>>관리자</option>
 							</select>
-							<input type="submit" value="등급변경" class="btn btn-warning btn-sm font5" />
+							<input type="submit" value="등급변경" class="btn btn-warning btn-sm font6" />
 							<input type="hidden" name="idx" value="${vo.idx}"/>
 						</form>
 					</td>

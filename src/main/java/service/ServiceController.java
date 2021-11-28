@@ -8,7 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 
 
@@ -17,7 +16,7 @@ import javax.servlet.http.HttpSession;
 public class ServiceController extends HttpServlet{
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ServiceInterface command = null;
+		//ServiceInterface command = null;
 		String viewPage = "";
 		
 		String uri = request.getRequestURI();

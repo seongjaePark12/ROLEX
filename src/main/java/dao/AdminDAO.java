@@ -5,10 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import conn.GetConn;
-import vo.QuestionVO;
 import vo.UserVO;
 
 public class AdminDAO {
@@ -21,7 +19,6 @@ public class AdminDAO {
 	private String sql = "";
 	
 	UserVO vo = null;
-	QuestionVO vo2 = null;
 
 	//신규회원(준회원)의 갯수 가져오기
 	public int getNewUser() {
@@ -202,35 +199,6 @@ public class AdminDAO {
 		return totRecCnt;
 	}
 
-	// 공지사항 리스트
-	public List<QuestionVO> questionList(int startIndexNo, int pageSize) {
-		List<QuestionVO> vos = new ArrayList<QuestionVO>();
-		try {
-			sql = "select * from question order by idx desc limit ?,?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, startIndexNo);
-			pstmt.setInt(2, pageSize);
-			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
-				vo2 = new QuestionVO();
-				vo2.setIdx(rs.getInt("idx"));
-				vo2.setName(rs.getString("name"));
-				vo2.setTitle(rs.getString("title"));
-				vo2.setvDate(rs.getString("vDate"));
-				vo2.setvCount(rs.getInt("vCount"));
-				vo2.setContent(rs.getString("content"));
-				
-				vos.add(vo2);
-			}
-		} catch (SQLException e) {
-			System.out.println("sql 오류 : " + e.getMessage());
-		}finally {
-			getConn.rsClose();
-		}
-		return vos;
-	}
-	
 	
 	
 	

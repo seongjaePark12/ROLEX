@@ -43,6 +43,7 @@ public class UserLoginCheckCommand implements UserInterface {
 			if(pwd.equals(result)) {  // 비밀번호 인증 OK!(정상 로그인 되었을때 처리부분)
 				session.setAttribute("sMid", mid);
 				session.setAttribute("sLevel", vo.getLevel());
+				session.setAttribute("sName", vo.getName());
 				
 				session.setAttribute("sLastDate", vo.getLastDate().substring(0, vo.getLastDate().lastIndexOf(".")));  // 최종 접속일 알아오기
 				//session.setAttribute("sPoint", vo.getPoint());				// 고객의 현재(로그인 전까지) 총 포인트

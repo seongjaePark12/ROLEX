@@ -45,7 +45,7 @@
 			<a href="man.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">시계구매하기</a>
 			<a href="${ctp}/service.ser" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스서비스</a>
 			<a href="${ctp}/serviceMap.ser" class="w3-padding-small w3-bar-item w3-button w3-mobile">공식 판매점</a>
-			<a href="care.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">공지사항</a>
+			<a href="${ctp}/userNotice.psj" class="w3-padding-small w3-bar-item w3-button w3-mobile">고객센터</a>
 		</div>
 		<div id="navright" style="flex: 1 1 0%; text-align: right; margin: auto 0px; display: none;">
 <%		if(level != 99){ %>

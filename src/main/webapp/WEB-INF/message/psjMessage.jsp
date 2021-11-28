@@ -25,6 +25,20 @@
   	else if(msg == "userUpdateNo") msg = "다시 시도해주세요";
   	else if(msg == "UserLevelChangeOk") msg = "등급이 변경되었습니다";
   	else if(msg == "UserResetOk") msg = "회원정보가 DB에서 삭제 되었습니다";
+  	else if(msg == "NoticeInputOk") msg = "공지사항이 등록되었습니다";
+  	else if(msg == "NoticeInputNo") msg = "공지사항을 다시 등록해주세요";
+  	else if(msg == "NoticeDeleteOk") msg = "삭제되었습니다";
+  	else if(msg == "NoticeDeleteNo") msg = "다시 시도해주세요";
+  	else if(msg == "noticeUpdateOk") msg = "수정완료";
+  	else if(msg == "QuestionInputOk") msg = "문의가 등록되었습니다";
+  	else if(msg == "QuestionInputNo") msg = "다시 시도해주세요";
+  	else if(msg == "QuestionUpdateOk") msg = "문의내용이 수정되었습니다";
+  	else if(msg == "QuestionUpdateNo") msg = "다시 시도해주세요";
+  	else if(msg == "noticeUpdateNo") msg = "다시 시도해주세요";
+  	else if(msg == "SimpleDeleteOk") msg = "삭제되었습니다";
+  	else if(msg == "SimpleDeleteNo") msg = "다시 시도해주세요";
+  	else if(msg == "SimpleInputOk") msg = "등록되었습니다";
+  	else if(msg == "SimpleInputNo") msg = "다시 시도해주세요";
   	
   	alert(msg);
   	if(url != "") location.href = url;
