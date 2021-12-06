@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import conn.SecurityUtil;
 import dao.UserDAO;
 import vo.UserVO;
 
@@ -36,29 +37,11 @@ public class UserJoinCheckCommand implements UserInterface {
 			request.setAttribute("url", request.getContextPath()+"/userJoin.psj");
 			return;
 		}
+		SecurityUtil securityUtil = new SecurityUtil();
+		pwd = securityUtil.encryptSHA256(pwd);
 		
-	// 비밀번호 암호화 처리 
-		long intPwd;
-		String strPwd = "";
-		for(int i=0; i<pwd.length(); i++) {
-			intPwd = (long) pwd.charAt(i);
-			strPwd += intPwd;
-		}
-		
-		intPwd = Long.parseLong(strPwd);	// 연산할 준비 완료
-		
-		int pwdKey = (int) (Math.random()*20);
-		long pwdValue = dao.getHashTableSearch(pwdKey);
-		
-		long encPwd;
-		
-		// 암호화 작업(인코딩)
-		encPwd = intPwd ^ pwdValue;		// 원본비번과 암호키값을 배타적OR(exclusive or)시킨다.
-		strPwd = String.valueOf(encPwd);	// DB에 저장하기위해 문자로 변환했다
-	
 		vo.setMid(mid);
-		vo.setPwd(strPwd);
-		vo.setPwdKey(pwdKey);
+		vo.setPwd(pwd);
 		vo.setName(name_);
 		vo.setBirth(birth);
 		vo.setEmail(email+"@"+email2);

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import conn.SecurityUtil;
 import dao.UserDAO;
 import vo.UserVO;
 
@@ -25,22 +26,12 @@ public class UserLoginCheckCommand implements UserInterface {
 		UserDAO dao = new UserDAO();
 		UserVO vo = dao.userLogin(mid);
 		
+		
 		if(vo != null) {  // 아이디 검색은 성공... 비밀번호가 맞는지 체크?.....
-			// DB에 저장된 암호를 복호화시킨다.(실무에서는 이런작업은 하지 않는다)
-			long decPwd;
-			long intPwd = Long.parseLong(vo.getPwd());		// DB에 넣었던 strPwd를 다시 불러서 복호화를 위해 정수형으로 변환했다.
-			long pwdValue  = (long) dao.getHashTableSearch(vo.getPwdKey());
-			decPwd = intPwd ^ pwdValue;
-			String strPwd = String.valueOf(decPwd);
+			SecurityUtil securityUtil = new SecurityUtil();
+			pwd = securityUtil.encryptSHA256(pwd);
 			
-			String result = "";
-			char ch;
-			for(int i=0; i<strPwd.length(); i+=2) {
-				ch = (char) Integer.parseInt(strPwd.substring(i, i+2));
-				result += ch;
-			}
-			
-			if(pwd.equals(result)) {  // 비밀번호 인증 OK!(정상 로그인 되었을때 처리부분)
+			if(pwd.equals(vo.getPwd())) {  // 비밀번호 인증 OK!(정상 로그인 되었을때 처리부분)
 				session.setAttribute("sMid", mid);
 				session.setAttribute("sLevel", vo.getLevel());
 				session.setAttribute("sName", vo.getName());
@@ -90,6 +81,7 @@ public class UserLoginCheckCommand implements UserInterface {
 				}
 			  request.setAttribute("msg", "userLoginOk");
 			  request.setAttribute("url", request.getContextPath()+"/userMain.psj");
+			  request.setAttribute("val", vo.getMid());
 			}
 			else {
 				request.setAttribute("msg", "userberLoginPwdNo");

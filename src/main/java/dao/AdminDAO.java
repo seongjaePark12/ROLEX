@@ -92,7 +92,6 @@ public class AdminDAO {
 				vo.setIdx(rs.getInt("idx"));
 				vo.setMid(rs.getString("mid"));
 				vo.setPwd(rs.getString("pwd"));
-				vo.setPwdKey(rs.getInt("pwdKey"));
 				vo.setName(rs.getString("name"));
 				vo.setLevel(rs.getInt("level"));
 				vo.setBirth(rs.getString("birth"));
@@ -158,7 +157,6 @@ public class AdminDAO {
 				vo.setIdx(rs.getInt("idx"));
 				vo.setMid(rs.getString("mid"));
 				vo.setPwd(rs.getString("pwd"));
-				vo.setPwdKey(rs.getInt("pwdKey"));
 				vo.setName(rs.getString("name"));
 				vo.setLevel(rs.getInt("level"));
 				vo.setBirth(rs.getString("birth"));

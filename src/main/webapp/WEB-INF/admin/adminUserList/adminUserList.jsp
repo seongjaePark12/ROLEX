@@ -52,7 +52,7 @@
 			</table>
 		</form>
 		<table class="table table-hover" >
-			<tr class="table-dark text-dark text-center font5">
+			<tr class="table-warning text-dark text-center font5">
 				<th><input type="checkbox" name="all" onclick="allCheck(this)" />전체</th>
 				<th>번호</th>
 				<th>아이디</th>

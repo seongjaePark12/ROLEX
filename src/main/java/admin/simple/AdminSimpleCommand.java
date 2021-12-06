@@ -18,20 +18,21 @@ public class AdminSimpleCommand implements AdminInterface {
 		SimpleDAO dao = new SimpleDAO();
 		int pag = request.getParameter("pag")==null ? 1 : Integer.parseInt(request.getParameter("pag"));	
 		int pageSize = request.getParameter("pageSize")==null ? 5 : Integer.parseInt(request.getParameter("pageSize")); 
+		String what = request.getParameter("what")==null ? "분류" : request.getParameter("what");
 		
-	// 최근글 수정시 아래 두줄 삽입/수정
-			int totRecCnt = dao.totRecCnt();// 전체자료
-			int totPage = (totRecCnt % pageSize)==0 ? totRecCnt/pageSize : (totRecCnt/pageSize) + 1;
-			int startIndexNo = (pag - 1) * pageSize; 
-			int curScrStartNo = totRecCnt - startIndexNo;	
-			int blockSize = 3; 
-		  int curBlock = (pag - 1) / blockSize;	
-		  int lastBlock = (totPage % blockSize)==0 ? ((totPage / blockSize) - 1) : (totPage / blockSize);
+// 최근글 수정시 아래 두줄 삽입/수정
+		int totRecCnt = dao.totRecCnt(what);// 전체자료
+		int totPage = (totRecCnt % pageSize)==0 ? totRecCnt/pageSize : (totRecCnt/pageSize) + 1;
+		int startIndexNo = (pag - 1) * pageSize; 
+		int curScrStartNo = totRecCnt - startIndexNo;	
+		int blockSize = 3; 
+	  int curBlock = (pag - 1) / blockSize;	
+	  int lastBlock = (totPage % blockSize)==0 ? ((totPage / blockSize) - 1) : (totPage / blockSize);
 			/* 블록페이징 처리끝*/
 		
 	  // 최근글 수정시 아래 1줄수정
 	  List<SimpleVO> vos = null;
-	  vos = dao.getSimpleList(startIndexNo, pageSize); // 전체자료
+	  vos = dao.getSimpleList(startIndexNo, pageSize, what); // 전체자료
 		
 		request.setAttribute("vos", vos);
 		request.setAttribute("pag", pag);
@@ -42,6 +43,7 @@ public class AdminSimpleCommand implements AdminInterface {
 		request.setAttribute("curBlock", curBlock);
 		request.setAttribute("lastBlock", lastBlock);
 		request.setAttribute("pageSize", pageSize);
+		request.setAttribute("what", what);
 	}
 
 }

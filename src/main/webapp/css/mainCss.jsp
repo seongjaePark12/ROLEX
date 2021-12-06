@@ -164,6 +164,16 @@
 	body {
 	  font-family: "Lato", sans-serif
 	}
+	a { /* a 태그 style 설정 */
+  text-align: center;
+  text-decoration: none; /* 링크의 밑줄 제거 */
+  color: inherit; /* 링크의 색상 제거 */
+  }
+  a:hover{ /* a 태그 style 설정 */
+    text-align: center;
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    color: lightgray; /* 링크의 색상 제거 */
+  }
 	#footerWidth #footer{
 	  text-align: center;
 	}

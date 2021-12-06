@@ -44,7 +44,7 @@ public class UserQuestionUpdateOkCommand implements UserInterface {
 		else {
 			request.setAttribute("msg", "QuestionUpdateNo");
 		}
-		request.setAttribute("url", request.getContextPath()+"/UserQuestion.psj?pag="+pag+"&pageSize="+pageSize);
+		request.setAttribute("url", request.getContextPath()+"/userQuestion.psj?pag="+pag+"&pageSize="+pageSize);
 
 
 

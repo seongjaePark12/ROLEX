@@ -41,11 +41,11 @@ public class UserQuestionInputOkCommand implements UserInterface {
 		
 		if(res == 1) {
 			request.setAttribute("msg", "QuestionInputOk");
-			request.setAttribute("url", request.getContextPath()+"/UserQuestion.psj");
+			request.setAttribute("url", request.getContextPath()+"/userQuestion.psj");
 		}
 		else {
 			request.setAttribute("msg", "QuestionInputNo");
-			request.setAttribute("url", request.getContextPath()+"/UserQuestion.psj");
+			request.setAttribute("url", request.getContextPath()+"/userQuestion.psj");
 		}
 	}
 

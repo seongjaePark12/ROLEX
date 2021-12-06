@@ -23,10 +23,14 @@
             <div class="col-lg-12">
               <div>
                 <input type="text" class="form-control" name="mid" id="mid" value="${mid}" placeholder="아이디를 입력해주세요"  maxlength="20" autofocus required />
+              	<div class="valid-feedback"></div>
+                <div class="invalid-feedback"></div>
               </div>
               <br>
               <div>
                 <input type="password" class="form-control" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요"  maxlength="20" required />
+             		<div class="valid-feedback"></div>
+		            <div class="invalid-feedback"></div>
               </div>
               <br/><br/>
               <div class="form-group form-check">
@@ -40,7 +44,7 @@
               <br/><br/>
             </div>
             <div align="center">
-              <a href="#">비밀번호를 잊으셨나요?</a> 
+              <a href="${ctp}/passwordFind.psj">비밀번호를 잊으셨나요?</a> 
             </div>
             <div align="center">
               <p>계정이 없으신가요? <a href="${ctp}/userJoin.psj">회원가입</a></p>
@@ -50,5 +54,25 @@
       </div>
     </div>
   </div>
+  <script>
+  // Disable form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Get the forms we want to add validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+  </script>
 </body>
 </html>

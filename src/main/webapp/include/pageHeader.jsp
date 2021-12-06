@@ -28,7 +28,7 @@
 <% 		}else{%>
 			<a href="${ctp}/userLogin.psj" class="w3-padding-small" id="login"><i class="fa fa-user"></i></a>&nbsp;&nbsp;&nbsp;
 <%		} %>
-			<a href="#" class="w3-padding-small"><i class="fa fa-shopping-bag" id="fashopping"> </i></a>
+			<a href="${ctp}/bookingMain.boo" class="w3-padding-small"><i class="far fa-calendar-alt" id="fashopping"> </i></a>
 			<button id="btnSearch" class="w3-padding-small btnSearch"><i id="SearchIcon" class="fa fa-search"></i></button>&nbsp;&nbsp;&nbsp;
 		</div>
 	</div>
@@ -40,9 +40,9 @@
 		</div>
 
 		<div class="menu3" id="Topcenter" style="flex: 1; text-align: center; margin: auto 0;">
-			<a href="collection.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스 컬렉션</a>
-			<a href="new.html" class="w3-padding-small w3-bar-item w3-button w3-mobile ">2021 신제품</a>
-			<a href="man.html" class="w3-padding-small w3-bar-item w3-button w3-mobile">시계구매하기</a>
+			<a href="${ctp}/collectionWatch.watch" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스 컬렉션</a>
+			<a href="${ctp}/newWatch.watch" class="w3-padding-small w3-bar-item w3-button w3-mobile ">2021 신제품</a>
+			<a href="${ctp}/manWatch.watch" class="w3-padding-small w3-bar-item w3-button w3-mobile">시계구매하기</a>
 			<a href="${ctp}/service.ser" class="w3-padding-small w3-bar-item w3-button w3-mobile">롤렉스서비스</a>
 			<a href="${ctp}/serviceMap.ser" class="w3-padding-small w3-bar-item w3-button w3-mobile">공식 판매점</a>
 			<a href="${ctp}/userNotice.psj" class="w3-padding-small w3-bar-item w3-button w3-mobile">고객센터</a>

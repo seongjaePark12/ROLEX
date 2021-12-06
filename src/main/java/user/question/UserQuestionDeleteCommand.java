@@ -23,11 +23,11 @@ public class UserQuestionDeleteCommand implements UserInterface {
 		
 		if(res == 1) {
 			request.setAttribute("msg", "QuestionDeleteOk");
-			request.setAttribute("url", request.getContextPath()+"/UserQuestion.psj?pag="+pag+"&pageSize="+pageSize);
+			request.setAttribute("url", request.getContextPath()+"/userQuestion.psj?pag="+pag+"&pageSize="+pageSize);
 		}
 		else {
 			request.setAttribute("msg", "QuestionDeleteNo");
-			request.setAttribute("url", request.getContextPath()+"/UserQuestionContent.psj?idx="+idx+"&pag="+pag+"&pageSize="+pageSize);
+			request.setAttribute("url", request.getContextPath()+"/userQuestionContent.psj?idx="+idx+"&pag="+pag+"&pageSize="+pageSize);
 		}
 	}
 

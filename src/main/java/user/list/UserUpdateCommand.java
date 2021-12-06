@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import conn.SecurityUtil;
 import dao.UserDAO;
 import user.UserInterface;
 import vo.UserVO;
@@ -17,22 +18,13 @@ public class UserUpdateCommand implements UserInterface {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String mid = (String) session.getAttribute("sMid");
+		String pwd = request.getParameter("pwd")==null ? "" :request.getParameter("pwd");
 		UserDAO dao = new UserDAO();
 		UserVO vo = dao.userLogin(mid);
 		
-		long decPwd;
-		long intPwd = Long.parseLong(vo.getPwd());		// DB에 넣었던 strPwd를 다시 불러서 복호화를 위해 정수형으로 변환했다.
-		long pwdValue  = (long) dao.getHashTableSearch(vo.getPwdKey());
-		decPwd = intPwd ^ pwdValue;
-		String strPwd = String.valueOf(decPwd);
-		
-		String result = "";
-		char ch;
-		for(int i=0; i<strPwd.length(); i+=2) {
-			ch = (char) Integer.parseInt(strPwd.substring(i, i+2));
-			result += ch;
-		}
-		vo.setPwd(result);
+		SecurityUtil securityUtil = new SecurityUtil();
+		pwd = securityUtil.encryptSHA256(pwd);
+		vo.setPwd(pwd);
 		// 이메일 처리
 		String[] email = vo.getEmail().split("@");
 		request.setAttribute("email1", email[0]);

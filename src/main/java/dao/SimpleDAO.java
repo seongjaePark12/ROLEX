@@ -20,13 +20,22 @@ public class SimpleDAO {
 	SimpleVO vo = null;
 	
 	// 게시글 전체보기
-	public List<SimpleVO> getSimpleList(int startIndexNo, int pageSize) {
+	public List<SimpleVO> getSimpleList(int startIndexNo, int pageSize, String what) {
 		List<SimpleVO> vos = new ArrayList<SimpleVO>();
 		try {
-			sql = "select * from RolexSimple order by idx desc limit ?,?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, startIndexNo);
-			pstmt.setInt(2, pageSize);
+			if(what.equals("분류")) {
+				sql = "select * from RolexSimple order by idx desc limit ?,?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, startIndexNo);
+				pstmt.setInt(2, pageSize);
+			}else {
+				sql = "select * from RolexSimple where what = ? order by idx desc limit ?,?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, what);
+				pstmt.setInt(2, startIndexNo);
+				pstmt.setInt(3, pageSize);
+			}
+			
 			rs = pstmt.executeQuery();
 			
 			while(rs.next()) {
@@ -38,7 +47,7 @@ public class SimpleDAO {
 				vos.add(vo);
 			}
 		} catch (SQLException e) {
-			System.out.println("getNoticeList sql에러" + e.getMessage());
+			System.out.println("getSimpleList sql에러" + e.getMessage());
 		}finally {
 			getConn.rsClose();
 		}
@@ -65,11 +74,18 @@ public class SimpleDAO {
 	}
 
 	// 게시글의 총 건수 수해오기
-	public int totRecCnt() {
+	public int totRecCnt(String what) {
 		int totRecCnt = 0;
 		try {
-			sql = "select count(*) from RolexSimple";
-			pstmt = conn.prepareStatement(sql);
+			if(what.equals("분류")) {
+				sql="select count(*) from RolexSimple";
+				pstmt = conn.prepareStatement(sql);
+			}
+			else {
+				sql="select count(*) from RolexSimple where what =?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, what);
+			}
 			rs = pstmt.executeQuery();
 			rs.next();
 			totRecCnt = rs.getInt(1);

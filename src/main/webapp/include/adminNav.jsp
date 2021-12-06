@@ -8,6 +8,7 @@
   <a href="${ctp}/adminUserList.boss" class="w3-bar-item w3-button w3-hide-small">회원관리</a>
   <a href="${ctp}/adminNotice.boss" class="w3-bar-item w3-button w3-hide-small">공지사항</a>
   <a href="${ctp}/adminQuestion.boss" class="w3-bar-item w3-button w3-hide-small">문의관리</a>
+  <a href="${ctp}/wmMessage.wm" class="w3-bar-item w3-button">1:1문의</a>
   <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="myFunction()">&#9776;</a>
 </div>
 
@@ -18,6 +19,7 @@
   <a href="${ctp}/adminUserList.boss" class="w3-bar-item w3-button">회원관리</a>
   <a href="${ctp}/adminNotice.boss" class="w3-bar-item w3-button">공지사항</a>
   <a href="${ctp}/adminQuestion.boss" class="w3-bar-item w3-button">문의관리</a>
+  <a href="${ctp}/wmMessage.wm" class="w3-bar-item w3-button">1:1문의</a>
 </div>
 <script>
 	function myFunction() {

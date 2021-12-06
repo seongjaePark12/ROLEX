@@ -31,7 +31,7 @@
       <div class="w3-container w3-pale-green w3-padding-16">
         <div class="w3-left"><i class="	fas fa-bullhorn w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3><a href="${ctp}/"><font color="red"><b>0</b></font></a>건</h3>
+          <h3><a href="${ctp}/adminQuestion.boss"><font color="red"><b>${totRecCnt}</b></font></a>건</h3>
         </div>
         <div class="w3-clear"></div>
         <h4>문의 사항</h4>

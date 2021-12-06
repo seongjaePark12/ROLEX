@@ -4,7 +4,6 @@ public class UserVO {
 	private int idx;
 	private String mid;
 	private String pwd;
-	private int pwdKey;
 	private String name;
 	private String birth;
 	private String email;
@@ -36,12 +35,6 @@ public class UserVO {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
-	public int getPwdKey() {
-		return pwdKey;
-	}
-	public void setPwdKey(int pwdKey) {
-		this.pwdKey = pwdKey;
 	}
 	public String getName() {
 		return name;
@@ -123,11 +116,9 @@ public class UserVO {
 	}
 	@Override
 	public String toString() {
-		return "UserVO [idx=" + idx + ", mid=" + mid + ", pwd=" + pwd + ", pwdKey=" + pwdKey + ", name=" + name + ", birth="
-				+ birth + ", email=" + email + ", getCode=" + getCode + ", address=" + address + ", emailInfor=" + emailInfor
-				+ ", userDel=" + userDel + ", point=" + point + ", level=" + level + ", visitCnt=" + visitCnt + ", startDate="
-				+ startDate + ", lastDate=" + lastDate + ", todayCnt=" + todayCnt + "]";
+		return "UserVO [idx=" + idx + ", mid=" + mid + ", pwd=" + pwd + ", name=" + name + ", birth=" + birth + ", email="
+				+ email + ", getCode=" + getCode + ", address=" + address + ", emailInfor=" + emailInfor + ", userDel="
+				+ userDel + ", point=" + point + ", level=" + level + ", visitCnt=" + visitCnt + ", startDate=" + startDate
+				+ ", lastDate=" + lastDate + ", todayCnt=" + todayCnt + "]";
 	}
-	
-	
 }

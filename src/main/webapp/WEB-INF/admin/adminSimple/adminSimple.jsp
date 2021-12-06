@@ -26,6 +26,12 @@
   			}
   		});
   	}
+  	
+  	//부분검색
+  	function whatCheck() {
+		  var what = whatForm.what.value;
+		  location.href = "${ctp}/adminSimple.boss?pag=${pag}&pageSize=${pageSize}&what="+what;
+	  } 
 	</script>
 </head>
 <body>
@@ -37,11 +43,27 @@
 	      <td colspan="2" class="p-0 text-center"><h2>자주하는질문</h2></td>
 	    </tr>
 			<tr>
-		 		<td class="text-left p-0">
+		 		<td class="text-right p-0">
 	      	<c:if test="${sLevel == 0 }">
-	        	<a href="${ctp}/adminSimpleInput.boss" class="btn btn-outline-warning btn w3-border w3-round-xxlarge font6">글쓰기</a>
+	        	<a href="${ctp}/adminSimpleInput.boss" class="btn btn-outline-warning btn w3-border w3-round-xxlarge font6 m-0">글쓰기</a>
 	        </c:if>
      		</td>
+     	</tr>
+     	<tr>	
+     		<td class="text-left">
+     			<form name="whatForm">
+						<select name="what" id="what" onchange="whatCheck()" class="w3-panel w3-border w3-round-xxlarge m-0">
+	            <option value="분류" ${what == '분류' ? 'selected' : '' }>분류</option>
+	            <option value="회원문의" ${what == '회원문의' ? 'selected' : '' }>회원문의</option>
+	            <option value="상품관련" ${what == '상품관련' ? 'selected' : '' }>상품관련</option>
+	            <option value="예약관련" ${what == '예약관련' ? 'selected' : '' }>예약관련</option>
+	            <option value="포인트" ${what == '포인트' ? 'selected' : '' }>포인트</option>
+	            <option value="A/S" ${what == 'A/S' ? 'selected' : '' }>A/S</option>
+	            <option value="기타" ${what == '기타' ? 'selected' : '' }>기타</option>
+	            <option value="TIP" ${what == 'TIP' ? 'selected' : '' }>TIP</option>
+						</select>
+					</form>
+				</td>
 	    </tr>
 	  </table>
 		<table class="table text-center">
@@ -52,17 +74,21 @@
 	    </tr>
 	    </thead>
 		</table>
-		<c:forEach var="vo" items="${vos}">
-		<div onclick="myFunction('Demo1')" class="w3-block w3-left-align"><h6><span style="margin: 0 30px 0 50px;font-weight: 400;">번호</span><span style="margin-left: 50px;">${vo.title}</span></h6></div>
-			<div id="Demo1" class="w3-hide w3-animate-zoom">
-				<div class="text-center">${fn:replace(vo.content,newLine,'<br/>')}
-					<c:if test="${sLevel == 0}">
-	 					<a href="javascript:DelCheck(${vo.idx})" class="btn btn-outline-warning btn-sm ">삭제</a>
-	 				</c:if>
- 				</div>
-			</div>
-		<hr/>			
-		</c:forEach>
+		<div class="accordion text-left">
+			<c:forEach var="vo" items="${vos}" varStatus="st">
+				<div class="item"><h6><span style="margin: 0 30px 0 50px;">${st.count}</span><span style="margin-left: 50px;">${vo.title}</span></h6></div>
+					<div class="w3-animate-zoom" style="display: none;">
+						<br/>
+						<span style="margin-left: 50px;">${fn:replace(vo.content,newLine,'<br/>')}
+							<c:if test="${sLevel == 0}">
+			 					<a href="javascript:DelCheck(${vo.idx})" class="btn btn-outline-warning btn-sm ">삭제</a>
+			 				</c:if>
+		 				</span>
+		 				<br/>
+					</div>
+					<hr/>			
+			</c:forEach>
+		</div>
 			  <!-- 블록 페이징처리 시작(bs4 스타일 적용) -->
 			<div class="container">
 				<ul class="pagination justify-content-center">
@@ -95,14 +121,13 @@
 		<!-- 블록 페이징처리 끝 -->
 	<jsp:include page="/include/footer.jsp"/>
 	<script>
-		function myFunction(id) {
-		  var x = document.getElementById(id);
-		  if (x.className.indexOf("w3-show") == -1) {
-		    x.className += " w3-show";
-		  } else { 
-		    x.className = x.className.replace(" w3-show", "");
-		  }
-		}
+		$(document).ready(function() {
+		    'use strict';
+		    $('.item').on("click", function () {
+		        $(this).next().slideToggle(100);
+		        $('p').not($(this).next()).slideUp('fast');
+		    });
+		});    
 </script>
 </body>
 </html>

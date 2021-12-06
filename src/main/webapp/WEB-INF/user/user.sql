@@ -4,7 +4,6 @@ create table RolexUser(
 	idx int not null auto_increment,
 	mid varchar(20) not null,								/* 아이디 */
 	pwd varchar(50) not null,								/* 비밀번호 */
-	pwdKey int not null, 										/* 해시키 관리하는 키번호 */
 	name varchar(20) not null,							/* 이름	*/					
 	birth datetime default now(),						/* 생년월일 */
 	email varchar(50) not null,							/* 이메일 */
@@ -24,9 +23,8 @@ create table RolexUser(
 desc RolexUser;
 --drop table RolexUser;
 select * from RolexUser;
-insert into RolexUser values(default, 'admin','1234',1,'박성재','1111-11-11',
-'qkrtjdwo337@naver.com','010-1004-1004','청주','Y',default,default,0,default,default,default,default);
 
+select mid from RolexUser where name='관리자' and email='qkrtjdwo337@naver.com';
 update RolexUser set pwd = '16708374', pwdKey=9 where mid = 'admin';
 
 create table hashTable(

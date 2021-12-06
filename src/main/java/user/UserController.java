@@ -49,6 +49,22 @@ public class UserController extends HttpServlet{
 			command.execute(request, response);
 			viewPage = "/WEB-INF/message/psjMessage.jsp";
 		}
+		else if(com.equals("/idFind")) { // 아이디찾기 처리
+			viewPage = "/WEB-INF/user/userLoginJoin/idFind.jsp";
+		}
+		else if(com.equals("/idFindEnd")) { // 아이디찾기 완료
+			command = new UserIdFindCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/user/userLoginJoin/idFindEnd.jsp";
+		}
+		else if(com.equals("/passwordFind")) { // 비밀번호찾기 처리
+			viewPage = "/WEB-INF/user/userLoginJoin/passwordFind.jsp";
+		}
+		else if(com.equals("/passwordFindEnd")) { // 비밀번호찾기 완료
+			command = new UserPasswordFindCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/user/userLoginJoin/passwordFindEnd.jsp";
+		}
 		else if(com.equals("/userLogOut")) { // 로그아웃 처리
 			command = new UserLogOutCommand();
 			command.execute(request, response);
@@ -83,8 +99,8 @@ public class UserController extends HttpServlet{
 			viewPage = "/WEB-INF/user/userPage/userMyPage.jsp";
 		}
 		else if(com.equals("/userUpdate")) {	// 회원 정보수정
-			//command = new UserUpdateCommand();
-			//command.execute(request, response);
+			command = new UserUpdateCommand();
+			command.execute(request, response);
 			viewPage = "/WEB-INF/user/userPage/userUpdate/userUpdate.jsp";
 		}
 		else if(com.equals("/userUpdateCheck")) {	// 회원 정보수정 처리
@@ -135,7 +151,7 @@ public class UserController extends HttpServlet{
 		else if(com.equals("/userQuestionUpdate")) { 	// Q&A 수정
 			command = new UserQuestionUpdateCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/message/psjMessage.jsp";
+			viewPage = "/WEB-INF/user/userQuestion/UserQuestionUpdate.jsp";
 		}
 		else if(com.equals("/userQuestionUpdateOk")) { 	// Q&A 수정완료
 			command = new UserQuestionUpdateOkCommand();
@@ -161,6 +177,11 @@ public class UserController extends HttpServlet{
 			command = new UserQuestionReplyDeleteCommand();
 			command.execute(request, response);
 			return;
+		}
+		else if(com.equals("/userSimple")) { 	// 자주하는질문
+			command = new UserSimpleCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/user/userSimple/UserSimple.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
