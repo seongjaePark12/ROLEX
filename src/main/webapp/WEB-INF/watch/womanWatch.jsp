@@ -11,7 +11,7 @@
 	<jsp:include page="/css/mainCss.jsp"/>
 	<title>여성용시계</title>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<jsp:include page="/include/serviceHeader.jsp"/>
 	<div><img width="100%" src="${ctp}/images/여성용.png"></div><br/><br/><br/><br/>
   <div width=100%>

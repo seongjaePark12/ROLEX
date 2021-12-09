@@ -40,6 +40,19 @@
   	else if(msg == "SimpleDeleteNo") msg = "다시 시도해주세요";
   	else if(msg == "SimpleInputOk") msg = "등록되었습니다";
   	else if(msg == "SimpleInputNo") msg = "다시 시도해주세요";
+  	else if(msg == "passwordUpdateOk") msg = "비밀번호가 변경 되었습니다";
+  	else if(msg == "passwordUpdateNo") msg = "비밀번호 변경 실패";
+  	else if(msg == "bookingMainContentOk") msg = "예약 되었습니다";
+  	else if(msg == "bookingMainContentNo") msg = "다시 예약해주세요";
+  	else if(msg == "bookingDeleteOk") msg = "예약이 취소 되었습니다";
+  	else if(msg == "bookingDeleteNo") msg = "다시 시도해주세요";
+  	else if(msg == "userpwdOk") msg = "확인되었습니다";
+  	else if(msg == "userpwdNo") msg = "비밀번호가 다릅니다";
+  	else if(msg == "wmInputOk") msg = "전송 완료";
+  	else if(msg == "wmInputNo") msg = "전송 실패";
+  	else if(msg == "wmDeleteOk") msg = "삭제 성공";
+  	else if(msg == "wmDeleteNo") msg = "삭제 실패";
+  	else if(msg == "loginGo") msg = "로그인 후 이용해 주세요";
   	
   	alert(msg);
   	if(url != "") location.href = url;

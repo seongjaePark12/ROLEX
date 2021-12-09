@@ -39,6 +39,9 @@ public class WebMessageDAO {
 				//sql = "select * from webMessage where receiveId=? and (receiveSw='g' or sendSw='g') order by idx desc";
 				sql = "select * from webMessage where (receiveId=? and receiveSw='g') or (sendId=? and sendSw='g') order by idx desc";
 			}
+			else {	// mSw가 0일때는 새메세지 작성처리임...
+				return vos;
+			}
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
 			if(mSw == 5) pstmt.setString(2, mid);
@@ -70,7 +73,7 @@ public class WebMessageDAO {
 	public int setWmInputOk(WebMessageVO vo) {
 		int res = 0;
 		try {
-			sql = "select mid from member where mid = ?";
+			sql = "select mid from RolexUser where mid = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getReceiveId());
 			rs = pstmt.executeQuery();
@@ -131,10 +134,10 @@ public class WebMessageDAO {
 
 	// 휴지통으로 이동하기
 	// 받은메세지를 휴지통으로 이동시킬때는 receiveSw를 'g'로 변경처리
-	public int wmDeleteCheck(int idx, String mFlag) {
+	public int wmDeleteCheck(int idx, int mSw) {
 		int res = 0;
 		try {
-			if(mFlag.equals("s")) {
+			if(mSw == 11) {
 				sql = "update webMessage set sendSw = 'g' where idx = ?";
 			}
 			else {
@@ -156,6 +159,12 @@ public class WebMessageDAO {
 	public void wmDeleteAll(String mid) {
 		try {
 			sql = "update webMessage set receiveSw = 'x' where receiveId = ? and receiveSw = 'g'";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, mid);
+			pstmt.executeUpdate();
+			getConn.pstmtClose();
+			
+			sql = "update webMessage set sendSw = 'x' where sendId = ? and sendSw = 'g'";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mid);
 			pstmt.executeUpdate();

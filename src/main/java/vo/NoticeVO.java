@@ -8,21 +8,19 @@ public class NoticeVO {
 	private String wDate;
 	private int readNum;
 	private String hostIp;
-	
+	private String fName;
+	private String fSName;
+	private int fSize;
 	//날짜형식 필드를 '문자'와 '숫자'로 저장시키기 위한 변수 선언
 	private String wCdate;
 	private int wNdate;
-	
 	//이전글/다음글을 위한 변수 선언
 	private int preIdx;
 	private int nextIdx;
 	private String preTitle;
 	private String nextTitle;
-	
 	//댓글 개수를 위한 변수
 	private int replyCount;
-	
-	
 	public int getIdx() {
 		return idx;
 	}
@@ -64,6 +62,24 @@ public class NoticeVO {
 	}
 	public void setHostIp(String hostIp) {
 		this.hostIp = hostIp;
+	}
+	public String getfName() {
+		return fName;
+	}
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+	public String getfSName() {
+		return fSName;
+	}
+	public void setfSName(String fSName) {
+		this.fSName = fSName;
+	}
+	public int getfSize() {
+		return fSize;
+	}
+	public void setfSize(int fSize) {
+		this.fSize = fSize;
 	}
 	public String getwCdate() {
 		return wCdate;
@@ -109,12 +125,9 @@ public class NoticeVO {
 	}
 	@Override
 	public String toString() {
-		return "QuestionVO [idx=" + idx + ", mid=" + mid + ", title=" + title + ", content=" + content
-				+ ", wDate=" + wDate + ", readNum=" + readNum + ", hostIp=" + hostIp + ", wCdate=" + wCdate
-				+ ", wNdate=" + wNdate + ", preIdx=" + preIdx + ", nextIdx=" + nextIdx + ", preTitle=" + preTitle
-				+ ", nextTitle=" + nextTitle + ", replyCount=" + replyCount + "]";
+		return "NoticeVO [idx=" + idx + ", mid=" + mid + ", title=" + title + ", content=" + content + ", wDate=" + wDate
+				+ ", readNum=" + readNum + ", hostIp=" + hostIp + ", fName=" + fName + ", fSName=" + fSName + ", fSize=" + fSize
+				+ ", wCdate=" + wCdate + ", wNdate=" + wNdate + ", preIdx=" + preIdx + ", nextIdx=" + nextIdx + ", preTitle="
+				+ preTitle + ", nextTitle=" + nextTitle + ", replyCount=" + replyCount + "]";
 	}
-	
-	
-	
 }

@@ -41,6 +41,16 @@
 		      </tr>
 		      <tr>
 		        <td colspan="2" style="height:200px;">
+				     <c:set var="fSName" value="${vo.fSName}"/>
+		       	 <c:set var="fSNames" value="${fn:split(fSName,'/')}"/>
+		       	 <c:forEach var="fSName" items="${fSNames}" varStatus="st">
+		       	 	<c:set var="fSNameLen" value="${fn:length(fSName)}"/>
+		       	 	<c:set var="ext" value="${fn:substring(fSName,fSNameLen-3,fSNameLen)}"/>
+		       	 	<c:set var="extUpper" value="${fn:toUpperCase(ext)}"/>
+		       	 	<c:if test="${extUpper=='JPG'||extUpper=='GIF'||extUpper=='PNG'}">
+		       	 		<img src="${ctp}/data/notice/${fSName}" width="350px"/><br/>
+		       	 	</c:if>
+		       	 </c:forEach>
 		          <br><br>
 		          ${fn:replace(vo.content,newLine,'<br/>')}
 		          <br><br>

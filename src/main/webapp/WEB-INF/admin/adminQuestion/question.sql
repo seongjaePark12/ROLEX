@@ -1,17 +1,3 @@
-/*
-create table RolexNotice(
-	idx int not null auto_increment,      	/* 게시글의 고유번호 */
-	mid varchar(20) not null,								/* 아이디 */
-	title varchar(100) not null,						/* 게시글의 글 제목	*/
-	content text not null,									/* 글내용	*/
-	wDate datetime not null default now(),	/* 글쓴 날짜 (현재)	*/
-	readNum int default 0,									/* 글 조회수 */
-	hostIp varchar(50) not null,						/* 접속 IP주소 */
-	good int default 0,											/* 좋아요 */
-	primary key(idx)												/* 기본키 : 글 고유번호 */
-);
-*/
-
 create table RolexQuestion(
 	idx int not null auto_increment,      	/* 게시글의 고유번호 */
 	mid varchar(20) not null,								/* 아이디 */

@@ -10,7 +10,7 @@
 	<jsp:include page="/css/mainCss.jsp"/>
 	<title>title</title>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<jsp:include page="/include/serviceHeader.jsp"/>
 	 <div width=100%>
     <div><img width="100%" src="${ctp}/images/서비스10.jpg"></div>

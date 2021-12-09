@@ -65,6 +65,11 @@ public class UserController extends HttpServlet{
 			command.execute(request, response);
 			viewPage = "/WEB-INF/user/userLoginJoin/passwordFindEnd.jsp";
 		}
+		else if(com.equals("/passwordInputOk")) { // 비밀번호 새로 등록
+			command = new PasswordInputOkCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/message/psjMessage.jsp";
+		}
 		else if(com.equals("/userLogOut")) { // 로그아웃 처리
 			command = new UserLogOutCommand();
 			command.execute(request, response);
@@ -83,20 +88,28 @@ public class UserController extends HttpServlet{
 			command.execute(request, response);
 			viewPage = "/WEB-INF/user/userLoginJoin/midCheck.jsp";
 		}
-		else if(com.equals("/userDelete")) {	// 회원 탈퇴
-			command = new UserDeleteCommand();
-			command.execute(request, response);
-			viewPage = "/WEB-INF/message/psjMessage.jsp";
-		}
 		else if(com.equals("/userMain")) {	//메인 화면
 			command = new UserMainCommand();
 			command.execute(request, response);
 			viewPage = "/WEB-INF/user/userMain.jsp";
 		}
+		else if(com.equals("/userDelete")) {	// 회원 탈퇴
+			command = new UserDeleteCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/message/psjMessage.jsp";
+		}
 		else if(com.equals("/userMyPage")) {	// 마이페이지
 			command = new UserMyPageCommand();
 			command.execute(request, response);
 			viewPage = "/WEB-INF/user/userPage/userMyPage.jsp";
+		}
+		else if(com.equals("/userUpdateMove")) {	// 회원 정보수정 전 체크
+			viewPage = "/WEB-INF/user/userPage/userUpdate/userUpdateMove.jsp";
+		}
+		else if(com.equals("/userUpdateMoveOk")) {	// 회원 정보수정 전 체크Ok
+			command = new UserUpdateMoveCommand();
+			command.execute(request, response);
+			viewPage = "/WEB-INF/message/psjMessage.jsp";
 		}
 		else if(com.equals("/userUpdate")) {	// 회원 정보수정
 			command = new UserUpdateCommand();

@@ -33,7 +33,7 @@
 	          <label for="pwd"><b>비밀번호</b><font size="2px" color="#AF4034"> *</font></label><br/>
 	        </div>
 	        <div>
-	          <input type="password" class="form-control" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요" value="" minlength="8" maxlength="20" required />
+	          <input type="password" class="form-control" name="pwd" id="pwd" placeholder="비밀번호를 입력해주세요" value="${pwd}" minlength="8" maxlength="20" required />
 	          <div class="valid-feedback"></div>
 	          <div class="invalid-feedback" style="text-align: left;">비밀번호는 영문, 숫자, 특수문자를 포함하여 8 ~ 20자로 작성해주세요</div>
 	        </div>
@@ -110,7 +110,8 @@
 	        </div>
 	        <br/>
 	        <div>
-	          <input style="text-align:center;" type="button" id="joinbtn" onclick="joinCheck()" value="정보수정" >
+	          <input style="text-align:center;" type="button" id="joinbtn" onclick="joinCheck()" value="정보수정" ><br/><br/>
+	          <a href="${ctp}/userMyPage.psj"><input type="button" value="돌아가기"></a>
 	        	<input type="hidden" name="mid" value="${sMid}"/>
 	        </div>
 	        <br/>

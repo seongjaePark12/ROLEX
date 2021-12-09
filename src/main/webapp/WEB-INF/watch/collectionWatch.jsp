@@ -11,7 +11,7 @@
 	<jsp:include page="/css/mainCss.jsp"/>
 	<title>롤렉스컬랙션</title>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<jsp:include page="/include/serviceHeader.jsp"/>
   <div><img width="100%" src="${ctp}/images/컬랙션99.jpg"></div><br/><br/><br/><br/>
   <div class="font1">누구나 한눈에 알아볼 수 있는, 시간을 초월한 스타일</div><br/><br/>

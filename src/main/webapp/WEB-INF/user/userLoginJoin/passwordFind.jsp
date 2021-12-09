@@ -7,17 +7,18 @@
 <head>
 	<meta charset="UTF-8">
 	<jsp:include page="/include/bs4.jsp"/>
+	<jsp:include page="/js/cilckNo.jsp"/>
 	<jsp:include page="/css/UserLoginCss.jsp"/>
-	<title>비밀번호 찾기</title>
+	<title>비밀번호 분실</title>
 </head>
-<body>
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 	<div class="Form my-4 mx-5">
     <div class="container">
       <div class="row no-gutters">
         <div class="col-lg-3">
         </div>
         <div class="col-lg-6">
-          <h1 class="font-weight-bold py-3 mt-3 ml-3" id="lolo">비 밀 번 호 찾 기</h1>
+          <h1 class="font-weight-bold py-3 mt-3 ml-3" id="lolo">비 밀 번 호 분 실</h1>
           <br/><br/>
           <form name="myform" action="${ctp}/passwordFindEnd.psj"  class="needs-validation" method="post" novalidate>
             <div class="col-lg-12">
@@ -51,7 +52,7 @@
 								</div>
 			        </div> 
               <div class="col-lg-12" align="center">
-                <input type="submit" class="btn btn1" value="비밀번호 찾기">
+                <input type="submit" class="btn btn1" value="조회하기">
               </div>
               <br/><br/>
             </div>

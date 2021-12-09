@@ -29,14 +29,14 @@
     }
   </script>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<jsp:include page="/include/pageHeader.jsp"/>
 	<jsp:include page="/include/serviceNav.jsp"/>
 			<div class="container">
 		<form name="myform" method="post" action="${ctp}/userQuestionUpdateOk.psj">
 			<table class="table table-boderless">
 				<tr>
-					<td><h2>게시판 수정</h2></td>
+					<td><h2>Q＆A 수정</h2></td>
 				</tr>
 			</table>
 			<table class="table">

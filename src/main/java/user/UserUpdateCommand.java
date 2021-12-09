@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import conn.SecurityUtil;
 import dao.UserDAO;
 import vo.UserVO;
 
@@ -17,12 +16,11 @@ public class UserUpdateCommand implements UserInterface {
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String mid = (String) session.getAttribute("sMid");
-		String pwd = request.getParameter("pwd")==null ? "" :request.getParameter("pwd");
+		String pwd = (String) request.getServletContext().getAttribute("pwd");
+		request.getServletContext().removeAttribute("pwd");
+		
 		UserDAO dao = new UserDAO();
 		UserVO vo = dao.userLogin(mid);
-		
-		SecurityUtil securityUtil = new SecurityUtil();
-		pwd = securityUtil.encryptSHA256(pwd);
 		
 		// 이메일 처리
 		String[] email = vo.getEmail().split("@");
@@ -53,7 +51,8 @@ public class UserUpdateCommand implements UserInterface {
 		request.setAttribute("address2", address2);
 		request.setAttribute("address3", address3);
 		request.setAttribute("address4", address4);
-
+		request.setAttribute("pwd", pwd);
+		
 	}
 
 }

@@ -31,7 +31,7 @@
 .myMenu {margin-bottom:150px}
 </style>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<jsp:include page="/include/serviceHeader.jsp"/>
 	<%-- <jsp:include page="/include/messageNav.jsp"/> --%>
   <div class="w3-row w3-white"style="padding-top:150px;">

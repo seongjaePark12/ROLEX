@@ -28,7 +28,8 @@
 <% 		}else{%>
 			<a href="${ctp}/userLogin.psj" class="w3-padding-small" id="login"><i class="fa fa-user"></i></a>&nbsp;&nbsp;&nbsp;
 <%		} %>
-			<a href="${ctp}/bookingMain.boo" class="w3-padding-small"><i class="far fa-calendar-alt" id="fashopping"> </i></a>
+			<c:if test="${sLevel == 1 ||sLevel == 2 ||sLevel == 3 ||sLevel == 4 ||sLevel == 5}"><a href="${ctp}/bookingUser.boo" class="w3-padding-small"><i class="far fa-calendar-alt" id="fashopping"> </i></a></c:if>
+			<c:if test="${sLevel == 0}"><a href="${ctp}/bookingMain.boo" class="w3-padding-small"><i class="far fa-calendar-alt" id="fashopping"> </i></a></c:if>
 			<button id="btnSearch" class="w3-padding-small btnSearch"><i id="SearchIcon" class="fa fa-search"></i></button>&nbsp;&nbsp;&nbsp;
 		</div>
 	</div>

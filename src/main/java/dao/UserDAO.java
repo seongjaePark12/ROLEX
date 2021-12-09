@@ -155,16 +155,24 @@ public class UserDAO {
 	public int setUserUpdateCheck(UserVO vo) {
 		int res = 0;
 		try {
-			sql = "update RolexUser set pwd=?,name=?,birth=?,email=?, getCode=?, address=?, emailInfor=? where mid=?";
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, vo.getPwd());
-			pstmt.setString(2, vo.getName());
-			pstmt.setString(3, vo.getBirth());
-			pstmt.setString(4, vo.getEmail());
-			pstmt.setString(5, vo.getGetCode());
-			pstmt.setString(6, vo.getAddress());
-			pstmt.setString(7, vo.getEmailInfor());
-			pstmt.setString(8, vo.getMid());
+			if(vo.getName() != null) {
+				sql = "update RolexUser set pwd=?,name=?,birth=?,email=?, getCode=?, address=?, emailInfor=? where mid=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, vo.getPwd());
+				pstmt.setString(2, vo.getName());
+				pstmt.setString(3, vo.getBirth());
+				pstmt.setString(4, vo.getEmail());
+				pstmt.setString(5, vo.getGetCode());
+				pstmt.setString(6, vo.getAddress());
+				pstmt.setString(7, vo.getEmailInfor());
+				pstmt.setString(8, vo.getMid());
+			}
+			else {
+				sql = "update RolexUser set pwd=? where mid = ?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, vo.getPwd());
+				pstmt.setString(2, vo.getMid());
+			}
 			pstmt.executeUpdate();
 			res = 1;
 		} catch (SQLException e) {
@@ -216,6 +224,26 @@ public class UserDAO {
 			getConn.rsClose();
 		}
 		return passwordFind;
+	}
+
+	public String getUserUpdateMove(String mid, String pwd) {
+		String passwordMove = "";
+		try {
+			sql = "select * from RolexUser where mid=? and pwd=?";
+			pstmt= conn.prepareStatement(sql);
+			pstmt.setString(1, mid);
+			pstmt.setString(2, pwd);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				passwordMove= rs.getString("pwd");
+			}
+		} catch (SQLException e) {
+			System.out.println("SQL 오류 : " + e.getMessage());
+		} finally {
+			getConn.rsClose();
+		}
+		return passwordMove;
 	}
 	
 	

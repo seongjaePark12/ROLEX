@@ -13,7 +13,7 @@
 </head>
 <body>
 	<jsp:include page="/include/serviceHeader.jsp"/>
-  <div>
+  <div oncontextmenu = "return false;">
     <div><img width="100%" src="${ctp}/images/탑1.png"></div>
     <br/><br/><br/><br/>
     <div class="font1">올리브 그린, 팜 모티프 다이얼과 오이스터 브레슬릿을 갖춘 오이스터스틸 소재의 오이스터 퍼페츄얼.</div>

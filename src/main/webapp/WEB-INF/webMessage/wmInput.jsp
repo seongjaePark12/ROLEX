@@ -14,15 +14,15 @@
   		var content =myform.content.value;
   		
   		if(receiveId == ""){
-  			alert("받는사람 아이디 입력해");
+  			alert("받는사람의 아이디를 입력하세요");
   			myform.receiveId.focus();
   		}
   		else if(title == ""){
-  			alert("제목 입력해");
+  			alert("제목을 입력하세요");
   			myform.title.focus();
   		}
   		else if(content == ""){
-  			alert("내용 입력해");
+  			alert("내용을 입력하세요");
   			myform.content.focus();
   		}
   		else{
@@ -31,7 +31,7 @@
   	}
   </script>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<div class="container">
 		<form name="myform" method="post" action="${ctp}/wmInputOk.wm">
 			<table class="table table-borderless">

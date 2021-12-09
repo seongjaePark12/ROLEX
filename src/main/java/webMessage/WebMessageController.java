@@ -22,11 +22,12 @@ public class WebMessageController extends HttpServlet{
 		String com = uri.substring(uri.lastIndexOf("/"),uri.lastIndexOf("."));
 		
 		HttpSession session = request.getSession();
-		int level = session.getAttribute("sLevel")==null ? 99 : (int) session.getAttribute("sLevel");
-		if(level == 1 || level >= 6) {
-			RequestDispatcher dispatcher = request.getRequestDispatcher("/");
-			dispatcher.forward(request, response);
-			return;
+		String mid = (String) session.getAttribute("sMid");
+		
+		if(mid == null) {
+			request.setAttribute("msg", "loginGo");
+			request.setAttribute("url", request.getContextPath()+"/userLogin.psj");
+			viewPage = "/WEB-INF/message/psjMessage.jsp";
 		}
 		else if(com.equals("/wmMessage")) {
 			command = new WebMessageCommand();
@@ -36,12 +37,12 @@ public class WebMessageController extends HttpServlet{
 		else if(com.equals("/wmInputOk")) {
 			command = new WmInputOkCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/message/message.jsp";
+			viewPage = "/WEB-INF/message/psjMessage.jsp";
 		}
 		else if(com.equals("/wmDeleteCheck")) {
 			command = new WmDeleteCheckCommand();
 			command.execute(request, response);
-			viewPage = "/WEB-INF/message/message.jsp";
+			viewPage = "/WEB-INF/message/psjMessage.jsp";
 		}
 		else if(com.equals("/wmDeleteAll")) {
 			command = new WmDeleteAllCommand();

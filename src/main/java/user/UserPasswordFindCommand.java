@@ -22,11 +22,14 @@ public class UserPasswordFindCommand implements UserInterface {
 		String passwordFind = dao.findPassword(mid,name,email);
 
 		if(passwordFind != "") {
-			message = "회원님의 비밀번호는 " + passwordFind + "입니다";
+			request.setAttribute("mid", mid);
+			message = "새로운 비밀번호를 등록하세요";
 		}
 		else {
 			message = "비밀번호를를 찾을 수 없습니다.";
+			
 		}
+		request.setAttribute("passwordFind", passwordFind);
 		request.setAttribute("message", message);
 	}
 

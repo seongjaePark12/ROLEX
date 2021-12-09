@@ -35,7 +35,7 @@ $(document).ready(function(){
 			if($(this).scrollTop()){
 				$(".rolex").slideUp(500);
 				$("#nav").css('background-color','black');
-				document.getElementBydId("navleft").style.display = '';
+		/* 		document.getElementBydId("navleft").style.display = ''; */
 				document.getElementById("navright").style.display = '';
 				document.getElementById("Topcenter").style.flex = 'none';
 				document.getElementById("Topleft").style.display = '';
@@ -96,24 +96,14 @@ $(document).ready(function(){
 		// 검생창을 띄우기 위함
 		$("#btnSearch").click(function(){
 			if($("#SearchIcon").hasClass("fa fa-search")){
-				var gender = '';
-				var num = '';
-				if(gender=='남자'){
-					num = 1;
-				}
-				else if(gender=='여자'){
-					num = 2;
-				}
-				else {
-					num = 3;
-				}
-				var query = {num:num};
+				var part = '';
+				var query = {part:part};
 				$.ajax({
 					url : "#", // 이건 컨트롤로 보낸다
 					type : "get",
 					data : query,
 					success:function(data) {
-						$("#searchTitle").html(gender+"인기 검색어");
+						$("#searchTitle").html(part+"실시간 순위");
 						for(var i=0; i<5; i++){
 							$("#search"+i).html("<li id='search"+i+"'><i class='fa fa-search'></i> <a href='#?search="+data[i].word+"' style='color: black;'>"+data[i].word+"</a></li>");
 						}
@@ -136,28 +126,18 @@ $(document).ready(function(){
 		
 		// 검생창을 띄우기 위함
 		$("#btnSearch1").click(function(){
-			if($("#SearchIcon1").hasClass("fa fa-search")){
-				var gender = '';
-				var num = '';
-				if(gender=='남자'){
-					num = 1;
-				}
-				else if(gender=='여자'){
-					num = 2;
-				}
-				else {
-					num = 3;
-				}
-				var query = {num:num};
+				var part = '';
+				
+				var query = {part:part};
 				$.ajax({
 					url : "#", // 이건 컨트롤로 보낸다
-					type : "get",
+					type : "post",
 					data : query,
 					success:function(data) {
-						$("#searchTitle").html(gender+"인기 검색어");
-						for(var i=0; i<5; i++){
-							$("#search"+i).html("<li id='search"+i+"'><i class='fa fa-search'></i> <a href='#?search="+data[i].word+"' style='color: black;'>"+data[i].word+"</a></li>");
-						}
+						$("#searchTitle").html(part+"실시간 순위");
+							for(var i=0; i<5; i++){
+								$("#search"+i).html("<li id='search"+i+"'><i class='fa fa-search'></i> <a href='#?search="+data[i].word+"' style='color: black;'>"+data[i].word+"</a></li>");
+							}
 					}
 				});
 				
@@ -166,13 +146,7 @@ $(document).ready(function(){
 				$("#SearchDiv").css('display','table');
 				$("#nav").css('background-color','black');
 				$("#search").focus();
-			}
-			else{
-				$("#SearchIcon1").attr('class','fa fa-search');
-				$("#SearchIcon").attr('class','fa fa-search');
-				$("#SearchDiv").css('display','none');
-				$("#nav").css('background','linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(255,255,255,0))');
-			}
+			
 		});
 	});
 	// 검색창에서 검색하기

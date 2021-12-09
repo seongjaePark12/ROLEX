@@ -10,7 +10,7 @@
 	<jsp:include page="/css/mainCss.jsp"/>
 	<title>공식판매점</title>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<jsp:include page="/include/serviceHeader.jsp"/>
 	<div align="center"><img width="30%" src="${ctp}/images/로고1.png"></div><br/><br/><br/><br/>
   <div align="center"  class="font1"> 공식 판매점 위치</div>

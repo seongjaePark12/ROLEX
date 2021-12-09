@@ -63,12 +63,15 @@ public class NoticeDAO {
 	public int setNoticeInput(NoticeVO vo) {
 		int res = 0;
 		try {
-			sql = "insert into RolexNotice values (default,?,?,?,default,default,?)";
+			sql = "insert into RolexNotice values (default,?,?,?,default,default,?,?,?,?)";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getMid());
 			pstmt.setString(2, vo.getTitle());
 			pstmt.setString(3, vo.getContent());
 			pstmt.setString(4, vo.getHostIp());
+			pstmt.setString(5, vo.getfName());
+			pstmt.setString(6, vo.getfSName());
+			pstmt.setInt(7, vo.getfSize());
 			pstmt.executeUpdate();
 			res = 1;
 		} catch (SQLException e) {
@@ -112,6 +115,9 @@ public class NoticeDAO {
 				vo.setwDate(rs.getString("wDate"));
 				vo.setReadNum(rs.getInt("readNum"));
 				vo.setHostIp(rs.getString("hostIp"));
+				vo.setfName(rs.getString("fName"));
+				vo.setfSName(rs.getString("fSName"));
+				vo.setfSize(rs.getInt("fSize"));
 			}
 		} catch (SQLException e) {
 			System.out.println("getNoticeContent sql에러" + e.getMessage());
@@ -141,6 +147,23 @@ public class NoticeDAO {
 		int res = 0;
 		try {
 			sql = "delete from RolexNotice where idx = ?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, idx);
+			pstmt.executeUpdate();
+			res=1;
+		} catch (SQLException e) {
+			System.out.println("setNoticeDelete sql에러" + e.getMessage());
+		}finally {
+			getConn.pstmtClose();
+		}
+		return res;
+	}
+	
+	// 업데이트 파일 삭제
+	public int updateFileDelete(int idx) {
+		int res = 0;
+		try {
+			sql = "update RolexNotice set fName='', fSName='', fSize=0 where idx = ?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, idx);
 			pstmt.executeUpdate();
@@ -213,12 +236,15 @@ public class NoticeDAO {
 	public int setNoticeUpdateOk(NoticeVO vo) {
 		int res = 0;
 		try {
-			sql = "update RolexNotice set title=?,content=?,hostIp=? where idx=?";
+			sql = "update RolexNotice set title=?,content=?,hostIp=?,fName=?,fSName=?,fSize=? where idx=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, vo.getTitle());
 			pstmt.setString(2, vo.getContent());
 			pstmt.setString(3, vo.getHostIp());
-			pstmt.setInt(4, vo.getIdx());
+			pstmt.setString(4, vo.getfName());
+			pstmt.setString(5, vo.getfSName());
+			pstmt.setInt(6, vo.getfSize());
+			pstmt.setInt(7, vo.getIdx());
 			pstmt.executeUpdate();
 			res = 1;
 		} catch (SQLException e) {

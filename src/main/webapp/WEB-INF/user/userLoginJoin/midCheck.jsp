@@ -10,6 +10,7 @@
 <head>
 	<meta charset="UTF-8">
 	<jsp:include page="/include/bs4.jsp"/>
+	<jsp:include page="/js/cilckNo.jsp"/>
 	<title>아이디체크</title>
 	<script>
   	function sendCheck(){
@@ -30,7 +31,7 @@
   	}
 	</script>
 </head>
-<body>
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 	<div class="container">
 		<h3 style="text-align: center;">아이디 체크</h3>
 		<%if(res == 1){ %>

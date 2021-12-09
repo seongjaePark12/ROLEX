@@ -9,25 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import user.list.UserDeleteCommand;
-import user.list.UserMainCommand;
-import user.list.UserMyPageCommand;
-import user.list.UserUpdateCheckCommand;
-import user.notice.UserNoticeCommand;
-import user.notice.UserNoticeContentCommand;
-import user.notice.UserNoticeSearchCommand;
-import user.notice.UserQuestionReplyDeleteCommand;
-import user.question.UserQuestionCommand;
-import user.question.UserQuestionContentCommand;
-import user.question.UserQuestionDeleteCommand;
-import user.question.UserQuestionInputCommand;
-import user.question.UserQuestionInputOkCommand;
-import user.question.UserQuestionReplyInputCommand;
-import user.question.UserQuestionReplyUpdateOkCommand;
-import user.question.UserQuestionSearchCommand;
-import user.question.UserQuestionUpdateCommand;
-import user.question.UserQuestionUpdateOkCommand;
-
 @SuppressWarnings("serial")
 @WebServlet("*.watch")
 public class WatchController extends HttpServlet{

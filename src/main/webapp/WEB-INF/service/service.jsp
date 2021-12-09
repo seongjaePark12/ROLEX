@@ -22,7 +22,7 @@
     }
     </style>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<jsp:include page="/include/serviceHeader.jsp"/>
   <div width="100%">
     <div><img width="100%" src="${ctp}/images/3.png"></div><br/><br/><br/>

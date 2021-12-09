@@ -6,30 +6,32 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>wmList</title>
+  <title>예약</title>
   <%@ include file="/include/bs4.jsp" %>
   <script>
-  function msgDel(idx) {
-  	var ans = confirm("선택된 메세지를 삭제하시겠습니까?");
-  	if(!ans) return false;
-  	var query = {
-  			idx : idx,
-  			mFlag : 's'
-  	}
-  	
-  	$.ajax({
-  		type : "post",
-  		url  : "${ctp}/wmMsgDel.wm",
-  		data : query,
-  		success:function() {
-  			alert("메세지가 삭제되었습니다.");
-  			location.reload();
-  		}
-  	});
-  }
+	  setTimeout("location.reload()",1000*10) // 10초마다 업데이트
+	  
+	  function msgDel(idx) {
+	  	var ans = confirm("선택된 메세지를 삭제하시겠습니까?");
+	  	if(!ans) return false;
+	  	var query = {
+	  			idx : idx,
+	  			mFlag : 11
+	  	}
+	  	
+	  	$.ajax({
+	  		type : "post",
+	  		url  : "${ctp}/wmMsgDel.wm",
+	  		data : query,
+	  		success:function() {
+	  			alert("메세지가 삭제되었습니다.");
+	  			location.reload();
+	  		}
+	  	});
+	  }
   </script>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<p><br/></p>
 	<div class="container">
 		<table class="table table-hover">

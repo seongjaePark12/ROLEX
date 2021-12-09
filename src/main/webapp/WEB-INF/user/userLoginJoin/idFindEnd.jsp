@@ -7,10 +7,11 @@
 <head>
 	<meta charset="UTF-8">
 	<jsp:include page="/include/bs4.jsp"/>
+	<jsp:include page="/js/cilckNo.jsp"/>
 	<jsp:include page="/css/UserLoginCss.jsp"/>
 	<title>아이디 찾기</title>
 </head>
-<body>
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 	<div class="Form my-4 mx-5">
     <div class="container">
       <div class="row no-gutters">

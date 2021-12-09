@@ -7,9 +7,10 @@
 	<meta charset="UTF-8">
 	<jsp:include page="/include/bs4.jsp"/>
 	<title>로그인페이지</title>
+	<jsp:include page="/js/cilckNo.jsp"/>
 	<jsp:include page="/css/UserLoginCss.jsp"/>
 </head>
-<body>
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 	<div class="Form my-4 mx-5">
     <div class="container">
       <div class="row no-gutters">

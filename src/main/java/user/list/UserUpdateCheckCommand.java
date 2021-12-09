@@ -47,7 +47,7 @@ public class UserUpdateCheckCommand implements UserInterface {
 		
 		if(res == 1) {  // 정상적으로 회원정보수정처리완료
 			request.setAttribute("msg", "userUpdateOk");
-			request.setAttribute("url", request.getContextPath()+"/userMain.psj");
+			request.setAttribute("url", request.getContextPath()+"/userMyPage.psj");
 		}
 		else {
 			request.setAttribute("msg", "userUpdateNo");

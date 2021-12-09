@@ -20,7 +20,7 @@
 		}
 	</style>
 </head>
-<body>
+<body oncontextmenu = "return false;">
 	<p><br/></p>
 	<div class="container">
 		 <table class="table table-bordered">
@@ -42,9 +42,12 @@
       </tr>
       <tr>
         <td colspan="2" class="text-center">
-          <input type="button" value="답장쓰기" onclick="location.href='${ctp}/wmMessage.wm?mSw=0&receiveId=${vo.sendId}';" class="btn btn-secondary"/> &nbsp;
-          <input type="button" value="휴지통으로" onclick="location.href='${ctp}/wmDeleteCheck.wm?mSw=${mSw}&mFlag=${param.mFlag}&idx=${vo.idx}';" class="btn btn-secondary"/> &nbsp;
-          <input type="button" value="돌아가기" onclick="location.href='${ctp}/wmMessage.wm';" class="btn btn-secondary"/> &nbsp;
+          <input type="button" value="답장쓰기" onclick="location.href='${ctp}/wmMessage.wm?mSw=0&receiveId=${vo.sendId}';" class="btn btn-warning"/> &nbsp;
+          <%-- <c:if test="${param.mFlag == 10 || param.mFlag == 11}">
+          	<input type="button" value="휴지통으로" onclick="location.href='${ctp}/wmDeleteCheck.wm?mSw=${param.mFlag}&idx=${vo.idx}';" class="btn btn-warning"/> &nbsp;
+          </c:if> --%>
+          <input type="button" value="휴지통으로" onclick="location.href='${ctp}/wmDeleteCheck.wm?mSw=${mSw}&mFlag=${param.mFlag}&idx=${vo.idx}';" class="btn btn-warning"/> &nbsp;
+          <input type="button" value="돌아가기" onclick="location.href='${ctp}/wmMessage.wm';" class="btn btn-warning"/> &nbsp;
         </td>
       </tr>
     </table>

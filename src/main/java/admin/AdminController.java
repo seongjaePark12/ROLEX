@@ -23,6 +23,7 @@ import admin.notice.AdminNoticeInputOkCommand;
 import admin.notice.AdminNoticeSearchCommand;
 import admin.notice.AdminNoticeUpdateCommand;
 import admin.notice.AdminNoticeUpdateOkCommand;
+import admin.notice.AdminUpdateFileDeleteCommand;
 import admin.question.AdminQuestionCommand;
 import admin.question.AdminQuestionContentCommand;
 import admin.question.AdminQuestionDeleteCommand;
@@ -51,9 +52,11 @@ public class AdminController extends HttpServlet{
 		HttpSession session = request.getSession();
 		String mid = (String) session.getAttribute("sMid");
 		int level = session.getAttribute("sLevel")==null ? 99 : (int) session.getAttribute("sLevel");
-//		if(mid == null || level != 0) {
-		if(mid == null || level >= 5) {
-			viewPage = "/WEB-INF/user/userLoginJoin/psjUserLogin.jsp";
+		
+		if(mid == null || level != 0) {
+			request.setAttribute("msg", "loginGo");
+			request.setAttribute("url", request.getContextPath()+"/userLogin.psj");
+			viewPage = "/WEB-INF/message/psjMessage.jsp";
 		}
 		else if(com.equals("/adminPage")) {	// 관리자 페이지
 			command = new AdminPageCommand();
@@ -109,6 +112,11 @@ public class AdminController extends HttpServlet{
 			command = new AdminNoticeUpdateCommand();
 			command.execute(request, response);
 			viewPage = "/WEB-INF/admin/adminNotice/adminNoticeUpdate.jsp";
+		}
+		else if(com.equals("/adminUpdateFileDelete")) { 	// 공지사항 수정 파일삭제
+			command = new AdminUpdateFileDeleteCommand();
+			command.execute(request, response);
+			return;
 		}
 		else if(com.equals("/adminNoticeUpdateOk")) { 	// 공지사항 완료
 			command = new AdminNoticeUpdateOkCommand();

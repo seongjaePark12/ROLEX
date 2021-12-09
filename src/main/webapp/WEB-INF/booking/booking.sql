@@ -3,7 +3,7 @@ create table booking(
 	mid varchar(20) not null, 									 /* 회원 고유 아이디	*/
 	name varchar(20) not null, 									 /* 회원 이름 	*/
 	booDate datetime not null default now(),     /* 예약 날짜	*/
-	bootime varchar(10) not null,								 /* 시간 */
+	booTime varchar(10) not null,								 /* 시간 */
 	content varchar(10) not null								 /* 분류 (상담/시계구매/AS/기타)	*/
 );
 

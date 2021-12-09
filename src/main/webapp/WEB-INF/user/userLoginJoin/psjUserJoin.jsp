@@ -14,10 +14,11 @@
 	<meta charset="UTF-8">
 	<jsp:include page="/include/bs4.jsp"/>
 	<title>회원가입페이지</title>
+	<jsp:include page="/js/cilckNo.jsp"/>
 	 <jsp:include page="/js/UserJoinJs.jsp"/>
 	 <jsp:include page="/css/UserJoinCss.jsp"/>
 </head>
-<body>
+<body oncontextmenu='return false' onselectstart='return false' ondragstart='return false'>
 	<div class="container bg-white">
     <div class="bg-white" style=" text-align: center; width: 100%">
 			<form name="myform"  style="display: inline-block; border: none;" method="post" action="${ctp}/userJoinCheck.psj"  class="was-validated bg-white" >
