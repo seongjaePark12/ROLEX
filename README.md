@@ -2,11 +2,14 @@
 
 ROLEX 시계판매 쇼핑몰
 
+
 ## 개인 프로젝트
+
 
 ## 1. 구현 목표
 
 -   관리자, 회원, 게시판이있는 쇼핑몰 구현 
+
 
 ## 2. 개발 일정
 
@@ -22,7 +25,9 @@ ROLEX 시계판매 쇼핑몰
 
 <img src="https://user-images.githubusercontent.com/92313032/167254335-2f0f4992-55c1-4530-8b95-777d760e85a4.png" alt="db"/>
 
+
 ## 5. 화면구현 - 공통
+
 
 <img src="https://user-images.githubusercontent.com/92313032/167254717-2711870f-d5d5-403b-8f29-997d321b9334.png" alt="rolex"/>
 <img src="https://user-images.githubusercontent.com/92313032/167254719-14712de0-b076-498d-b336-1ad80f9bf933.png" alt="rolex"/>
@@ -30,7 +35,9 @@ ROLEX 시계판매 쇼핑몰
 <img src="https://user-images.githubusercontent.com/92313032/167254722-f4394cf6-15a9-48a3-a20a-02a114515739.png" alt="rolex"/>
 <img src="https://user-images.githubusercontent.com/92313032/167254715-89d5cfdb-615c-4a64-8b37-69d79ba102e2.png" alt="rolex"/>
 
+
 ## 6. 화면구현 - 회원
+
 
 ![11](https://user-images.githubusercontent.com/92313032/167254788-d63de720-09b1-4ea9-bdd9-776bd5ad586b.png)
 ![12](https://user-images.githubusercontent.com/92313032/167254793-810c67d7-13e1-4da4-b4d0-01c715810c97.png)
@@ -41,8 +48,10 @@ ROLEX 시계판매 쇼핑몰
 ![17](https://user-images.githubusercontent.com/92313032/167254800-7b16cb50-c049-4a9e-9dfe-c66336f8d668.png)
 
 
+
 ## 7. 화면구현 - 관리자
-                 
+          
+          
 ![21](https://user-images.githubusercontent.com/92313032/167254818-7dc67c7f-d972-4aed-ba78-fe5cf03975ff.png)
 ![22](https://user-images.githubusercontent.com/92313032/167254819-4a705f54-2a25-4960-b94b-50b864100839.png)
 ![23](https://user-images.githubusercontent.com/92313032/167254820-465d3c2b-4ca0-46a1-9f25-d7a949f469bd.png)
